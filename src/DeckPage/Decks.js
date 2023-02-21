@@ -12,21 +12,17 @@ function Decks(){
 
     const handleDeleteLocal = (indexToDelete) => //index of card
     {
-        console.log(indexToDelete, deck)
-        //let currentDeckIndex = deck.findIndex((deck) => deck.id === deckId) //index of deck
-        deck.cards = deck.cards.filter((deck, index) => index !== indexToDelete)
-        setDeck((decks) =>
-            decks = deck
-    )
+        console.log(indexToDelete);
+        console.log(deck);
+
+        setDeck((deck) => deck.cards = deck.cards.filter((card, index) => index !== indexToDelete))
     }
 
     useEffect(() => {
         const abortController = new AbortController();
-        console.log('hey',deckId)
         readDeck(deckId, abortController.signal).then(setDeck).catch(setError);
-        console.log(deck)
         return () => abortController.abort();
-    }, [deckId]);
+    }, [deckId, deck.cards?.length]);
 
     if (error){return (<div>Error</div>)}
 
@@ -35,7 +31,7 @@ function Decks(){
         return(
         
             <div className = 'container'>
-              <DeckOverview deck = {deck} deleteCardLocal = {() => handleDeleteLocal()}/>
+              <DeckOverview deck = {deck} deleteCardLocalParent = {handleDeleteLocal}/>
             </div>
         )
     }
