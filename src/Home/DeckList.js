@@ -22,7 +22,10 @@ function DeckList(){
     useEffect(() => {
       
       const abortController = new AbortController();
-        listDecks(abortController.signal).then(setDecks).catch(setError);
+        listDecks(abortController.signal)
+        .then(setDecks)
+        .catch(setError);
+        
         return () => abortController.abort();
     }, []); 
 

@@ -1,9 +1,9 @@
 import React from "react";
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route} from 'react-router-dom';
 import Header from "./Header";
 import Decks from "../DeckPage/Decks";
 import DeckList from "../Home/DeckList";
-//import EditCard from "../Edit"
+import EditCard from "../EditCard/EditCard";
 import NotFound from "./NotFound";
 
 //routes for everything
@@ -21,7 +21,7 @@ function Layout() {
               <Decks />
           </Route>
           <Route exact path="/decks/:deckId/cards/:cardId/edit">
-              {/* <EditCard /> */}
+              <EditCard /> 
           </Route>
           <NotFound />
         </Switch>
