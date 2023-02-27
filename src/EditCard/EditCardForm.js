@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {useHistory} from 'react-router-dom'
 import {updateCard} from '../utils/api'
 
 
@@ -6,7 +7,7 @@ function EditCardForm({deckId, card, setCard}){
 
     const [formData, setFormData] = useState({...card})
     const [error, setError] = useState()
-    //const history = useHistory()
+    const history = useHistory()
 
     const handleChange = ({target}) => {
         setFormData({
@@ -20,7 +21,9 @@ function EditCardForm({deckId, card, setCard}){
         event.preventDefault()
         updateCard(formData)
         .then(setCard)
-        .catch(setError)
+        .then(history.push(`/decks/${deckId}`))
+        .catch(setError) 
+
     }
 
     if (error){return <h1>Error</h1>}
@@ -33,14 +36,14 @@ function EditCardForm({deckId, card, setCard}){
                 <div className = 'form-container'>
                     <label htmlFor='card-front'>Front</label>
                     <input className = 'form-info'
-                        name='card-front' value={formData.front} onChange={handleChange}>
+                        name='front' value={formData.front} onChange={handleChange}>
                     </input>
                 </div>
 
                 <div className = 'form-container'>
                     <label htmlFor='card-back'>Back</label>
                     <textarea className = 'form-info'
-                        name='card-back' value={formData.back} onChange={handleChange}>
+                        name='back' value={formData.back} onChange={handleChange}>
                     </textarea>
                 </div>
 
