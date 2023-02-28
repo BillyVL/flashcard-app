@@ -3,7 +3,6 @@
 
 //will display deck with description, buttons: view, study, delete (link)
 import React, {useEffect} from "react";
-//import DeleteDeck from './DeckList'
 import { deleteDeck } from "../utils/api";
 import {useRouteMatch, useParams} from 'react-router-dom'
 import CardView from './CardView'
@@ -36,7 +35,7 @@ function DeckOverview({deck, deleteCardLocalParent}){
             <div className = 'card-body'>
             <h1 className = 'card-title'>{deck.title}</h1>
                 <p className = 'card-desc'>{deck.description}</p>
-                <a className="view-btn" href={`/decks/${deck.id}/edit`}>Edit</a> 
+                <a className="view-btn"  href={`/decks/${deck.id}/edit`}>Edit</a> 
                 <a className="study-btn" href={`/decks/${deck.id}/study`}>Study</a>
                 <button className="delete-btn" onClick={handleDelete}>Delete</button>
             </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function EditCardCrumb({card, deck, deckId}){
+function EditCardNav({card, deck, deckId}){
 
      return (
         <div>
@@ -17,4 +17,4 @@ function EditCardCrumb({card, deck, deckId}){
 
 }
 
-export default EditCardCrumb
+export default EditCardNav

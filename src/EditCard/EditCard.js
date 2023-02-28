@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import EditCardForm from './EditCardForm'
-import EditCardCrumb from './EditCardCrumb'
+import EditCardNav from './EditCardNav'
 import {readDeck, readCard} from '../utils/api'
 import {useParams} from 'react-router-dom'
 
@@ -24,7 +24,7 @@ function EditCard(){
     else{
         return (
             <div className = 'container'>
-                <EditCardCrumb card = {card} deck = {deck} deckId = {deckId}/>
+                <EditCardNav card = {card} deck = {deck} deckId = {deckId}/>
                 <EditCardForm deckId = {deckId} card = {card} setCard = {setCard}/>
             </div>
         )

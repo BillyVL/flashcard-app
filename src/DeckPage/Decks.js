@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {readDeck} from '../utils/api'
 import DeckOverview from './DeckOverview'
+import DeckNav from './DeckNav'
 import {useParams} from "react-router-dom"
 
 function Decks(){
@@ -31,7 +32,9 @@ function Decks(){
         return(
         
             <div className = 'container'>
+              <DeckNav deck = {deck} />
               <DeckOverview deck = {deck} deleteCardLocalParent = {handleDeleteLocal}/>
+
             </div>
         )
     }
