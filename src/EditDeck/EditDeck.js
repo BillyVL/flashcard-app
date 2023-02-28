@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import EditDeckForm from './EditDeckForm'
-//import EditCardCrumb from './EditCardCrumb'
+import EditDeckNav from './EditDeckNav'
 import {readDeck} from '../utils/api'
 import {useParams} from 'react-router-dom'
 
@@ -22,6 +22,7 @@ function EditDeck(){
     else{
         return (
             <div className = 'container'>
+                <EditDeckNav deck = {deck}/>
                 <EditDeckForm deck = {deck}/>
             </div>
         )
