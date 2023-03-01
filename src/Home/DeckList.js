@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import DeckView from './DeckView'
 import {listDecks} from '../utils/api'
+import HomeNav from './HomeNav'
 //create and set decks
 //map function for decks
 //delete will be passed to view
@@ -46,6 +47,7 @@ function DeckList(){
     return(
         
         <div className = 'container'>
+          <HomeNav />
           <a className = 'createDeck-btn' href='decks/new'>+ Create Deck</a>
           <div>{list}</div>
         </div>

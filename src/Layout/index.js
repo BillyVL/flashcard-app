@@ -5,6 +5,7 @@ import CreateDeck from "../CreateDeck/CreateDeck"
 import Decks from "../DeckPage/Decks";
 import DeckList from "../Home/DeckList";
 import EditCard from "../EditCard/EditCard";
+import AddCard from "../AddCard/AddCard";
 import EditDeck from "../EditDeck/EditDeck";
 import Study from "../Study/Study";
 import NotFound from "./NotFound";
@@ -28,6 +29,9 @@ function Layout() {
           </Route>
           <Route exact path="/decks/:deckId/edit">
               <EditDeck />
+          </Route>
+          <Route exact path="/decks/:deckId/cards/new">
+            <AddCard />
           </Route>
           <Route exact path="/decks/:deckId/cards/:cardId/edit">
               <EditCard /> 

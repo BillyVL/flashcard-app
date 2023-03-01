@@ -2,15 +2,14 @@ import React from 'react'
 
 function EditDeckNav({deck}){
 
-    return (
-        <div>
-            <nav>
-                <ul>
-                    <li><a href = '/'>Home</a></li>
-                    <li><a href={`/decks/${deck.id}`}>Deck: {deck.name}</a></li>
-                </ul>
-            </nav>
-        </div>
+
+     return (
+        <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Deck: {deck.name}</li>
+        </ol>
+    </nav>
      )
 
 

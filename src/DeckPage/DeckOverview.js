@@ -15,7 +15,9 @@ function DeckOverview({deck, deleteCardLocalParent}){
   //handle delete
   const handleDelete = async () =>
   {
-    await deleteDeck(deck.id)   
+    if(window.confirm("Delete this deck?\nYou will not be able to recover it.")) {
+      await deleteDeck(deck.id)   
+    }
   }
 
   function handleDeleteLocal(cardId) {
@@ -35,8 +37,9 @@ function DeckOverview({deck, deleteCardLocalParent}){
             <div className = 'card-body'>
             <h1 className = 'card-title'>{deck.title}</h1>
                 <p className = 'card-desc'>{deck.description}</p>
+                <a className="add-btn btn-primary" href={`${url}/cards/new`}>+ Add Cards</a>
                 <a className="view-btn"  href={`/decks/${deck.id}/edit`}>Edit</a> 
-                <a className="study-btn" href={`/decks/${deck.id}/study`}>Study</a>
+                <a className="study-btn btn-secondary" href={`/decks/${deck.id}/study`}>Study</a>
                 <button className="delete-btn" onClick={handleDelete}>Delete</button>
             </div>
         </div>

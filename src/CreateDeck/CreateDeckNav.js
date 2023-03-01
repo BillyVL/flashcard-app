@@ -1,18 +1,20 @@
 import React from "react"
 
 
-function CreateDeckNav({deck}){
+function CreateDeckNav({}){
 
-    return (
-        <div>
-            <nav>
-                <ul>
-                    <li><a href = '/'>Home</a></li>
-                    <li>Creating deck...</li>
-                </ul>
-            </nav>
-        </div>
+
+
+     
+     return (
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Creating Deck</li>
+            </ol>
+        </nav>      
      )
+     
 
 
 
