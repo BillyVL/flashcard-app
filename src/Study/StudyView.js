@@ -18,16 +18,16 @@ function StudyView({deck}){
     }, [cardID])
 
     const handleFlip = () => {
-        if(flip === true){setFlip(false)}
-        if(flip === false){setFlip(true)}
+        setFlip(true)
     }
 
     const handleNext = () => {
-        setCardID(cardID + 1)
         setFlip(false)
+        setCardID(cardID + 1)
+        
     }
 
-    if (cardID === cards.length+1){
+    if (flip === false && cardID === cards.length+1){
         if(window.confirm("Restart cards? \n Click 'cancel' to return to the home page.")){
             setCardID(1)
             setFlip(false)
@@ -37,7 +37,7 @@ function StudyView({deck}){
         }
     }
 
-    if(cards.length===0){return <h1>Loading...</h1>}
+    if(!cards){return <h1>Loading...</h1>}
 
     if (cards.length < 3){
         return(
@@ -54,8 +54,8 @@ function StudyView({deck}){
                 <h2>Card {cardID} of {cards.length}</h2>
                 {flip ? (<p>{card.back}</p>) : (<p>{card.front}</p>)}
 
-                <button onClick={handleFlip}>Flip</button>
-                <button onClick={handleNext}>Next</button>
+                <button className="btn btn-secondary" onClick={handleFlip}>Flip</button>
+                {flip && (<button className="btn btn-primary" onClick={handleNext}>Next</button>)}
             </div>
             
         )
