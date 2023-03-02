@@ -27,7 +27,7 @@ function StudyView({deck}){
         setFlip(false)
     }
 
-    if (flip === true && cardID === cards.length){
+    if (cardID === cards.length+1){
         if(window.confirm("Restart cards? \n Click 'cancel' to return to the home page.")){
             setCardID(1)
             setFlip(false)
@@ -55,7 +55,7 @@ function StudyView({deck}){
                 {flip ? (<p>{card.back}</p>) : (<p>{card.front}</p>)}
 
                 <button onClick={handleFlip}>Flip</button>
-                    { (<button onClick={handleNext}>Next</button>)}
+                <button onClick={handleNext}>Next</button>
             </div>
             
         )

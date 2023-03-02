@@ -23,6 +23,7 @@ function DeckView({deck = { cards: [] }, deleteDeckLocal}){
 
       <div className='card'>
         <div className = 'card-body'>
+        <h6 className="card-subtitle text-muted">{deck.cards.length} cards</h6>
           <p className = 'card-title'>{deck.name}</p>
             <p className = 'card-desc'>{deck.description}</p>
             <a className="view-btn" href={`/decks/${deck.id}`}>View</a> 

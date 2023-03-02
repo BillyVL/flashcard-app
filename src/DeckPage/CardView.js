@@ -1,7 +1,7 @@
 //renders one card
 //where you can see the front/back of a card
 //edit and delete card
-
+import React from 'react'
 import { deleteCard } from "../utils/api"
 
 function CardView({card, url, deleteCardLocal}){

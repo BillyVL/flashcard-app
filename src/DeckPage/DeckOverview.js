@@ -9,7 +9,7 @@ import CardView from './CardView'
 
 //make buttons
 
-function DeckOverview({deck, deleteCardLocalParent}){
+function DeckOverview({deck = {cards: []}, deleteCardLocalParent}){
     
     const {url} = useRouteMatch();
   //handle delete
