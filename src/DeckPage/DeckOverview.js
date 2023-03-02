@@ -2,16 +2,16 @@
 //buttons: edit, study, add, delete
 
 //will display deck with description, buttons: view, study, delete (link)
-import React, {useEffect} from "react";
+import React from "react";
 import { deleteDeck } from "../utils/api";
-import {useRouteMatch, useParams} from 'react-router-dom'
+import {useRouteMatch} from 'react-router-dom'
 import CardView from './CardView'
 
 //make buttons
 
 function DeckOverview({deck, deleteCardLocalParent}){
-    const {deckId} = useParams(); // TODO: This ID will need to be pulled from parameters.
-    const {url, path} = useRouteMatch();
+    
+    const {url} = useRouteMatch();
   //handle delete
   const handleDelete = async () =>
   {

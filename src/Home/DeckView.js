@@ -1,6 +1,5 @@
 //will display deck with description, buttons: view, study, delete (link)
 import React from "react";
-//import DeleteDeck from './DeckList'
 
 import {useHistory} from "react-router-dom";
 import { deleteDeck } from "../utils/api";
