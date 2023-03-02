@@ -27,6 +27,11 @@ function StudyView({deck}){
         
     }
 
+    if (cards.length === 0){
+        return <div><p>You need at least 3 cards to study. There are {cards.length} in this deck.</p>
+        <a href={`/decks/${deck.id}/cards/new`} className="btn btn-primary">+ Add Cards</a></div>
+    }
+
     if (flip === false && cardID === cards.length+1){
         if(window.confirm("Restart cards? \n Click 'cancel' to return to the home page.")){
             setCardID(1)
