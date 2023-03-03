@@ -8,7 +8,7 @@ function AddCardNav({deck}){
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <li class="breadcrumb-item"><a href={`/decks/${deck.id}`}>{deck.name}</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Creating Deck</li>
+                <li class="breadcrumb-item active" aria-current="page">Add Card</li>
             </ol>
         </nav>      
      )

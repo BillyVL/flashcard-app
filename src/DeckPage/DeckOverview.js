@@ -35,7 +35,7 @@ function DeckOverview({deck = {cards: []}, deleteCardLocalParent}){
     <div className = 'container'>
         <div className='card'>
             <div className = 'card-body'>
-            <h1 className = 'card-title'>{deck.title}</h1>
+            <h1 className = 'card-title'>{deck.name}</h1>
                 <p className = 'card-desc'>{deck.description}</p>
                 <a className="add-btn btn-primary" href={`${url}/cards/new`}>+ Add Cards</a>
                 <a className="view-btn"  href={`/decks/${deck.id}/edit`}>Edit</a> 

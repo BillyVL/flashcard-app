@@ -33,7 +33,7 @@ function AddCardForm({deck}){
 
     return(
     <div className = 'container'>
-        <h1>Adding Card to {deck.name}</h1>
+        <h1>Add Card to {deck.name}</h1>
         <form onSubmit={handleSubmit}>
 
             <div className = 'form-container'>
