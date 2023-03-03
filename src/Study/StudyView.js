@@ -28,7 +28,7 @@ function StudyView({deck}){
     }
 
     if (cards.length === 0){
-        return <div><p>You need at least 3 cards to study. There are {cards.length} in this deck.</p>
+        return <div><p>Not enough cards. You need at least 3 cards to study. There are {cards.length} in this deck.</p>
         <a href={`/decks/${deck.id}/cards/new`} className="btn btn-primary">+ Add Cards</a></div>
     }
 
